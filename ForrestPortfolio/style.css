@@ -1,0 +1,238 @@
+/* Style inputs with type="text", select elements and textareas */
+input[type="text"],
+select,
+textarea {
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 10px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+  background-color: #0483aa;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type="submit"]:hover {
+  background-color: #0483aa;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.navbar-nav {
+  font-family: "Biome W01 Wide Bold";
+  text-align: end;
+}
+
+nav {
+  transition: background-color 1.5s ease;
+}
+
+.solidNav {
+  background-color: black;
+  color: white;
+}
+
+.transparentNav {
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(255, 255, 255);
+}
+
+.transparentNav .nav-link {
+  color: white;
+}
+.solidNav .nav-link {
+  color: white;
+}
+
+body {
+  background-image: url("Video/WebAnimation_1.gif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center left;
+}
+#futurePage {
+  background-image: url("Video/WebAnimation_2.gif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center left;
+}
+#workPage {
+  background-image: url("Video/Water_1.gif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center left;
+}
+#animationPage {
+  background-image: url("Video/Water_1.gif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center left;
+}
+#gdPage {
+  background-image: url("Video/Water_1.gif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center left;
+}
+#modelPage {
+  background-image: url("Video/Water_1.gif");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center left;
+}
+
+h1 {
+  font-family: "Biome W01 Wide Bold";
+}
+
+h3 {
+  font-family: "Biome W01 Wide Bold";
+}
+
+h5 {
+  font-family: "Biome W01 Wide Bold";
+}
+
+p {
+  font-family: "Biome W01 Wide Bold";
+  font-size: 1rem;
+}
+
+#Intro {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#Info {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#graphicstuff {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#animations {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#models {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#chonkyTimes {
+  background-color: rgba(100, 99, 99, 0.249);
+}
+
+#chonkyTimes a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+#chonkyTimes a:hover {
+  text-decoration: underline;
+  color: rgb(66, 211, 255);
+}
+
+#future {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#futuregame {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.modal {
+  font-family: "Biome W01 Wide Bold";
+}
+
+#whitelogo {
+  background-color: black;
+  color: white;
+}
+
+footer {
+  align-items: center;
+  font-family: "Biome W01 Wide Bold";
+  color: rgb(0, 0, 0);
+  background-image: linear-gradient(
+    to top,
+    rgb(0, 0, 0),
+    rgba(0, 0, 0, 0.71),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+footer h1 {
+  color: rgb(0, 0, 0);
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+i {
+  color: rgb(255, 255, 255) !important;
+}
+
+footer p {
+  color: white;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'/%3e%3c/svg%3e");
+}
+/* iframe stuff */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  iframe {
+    width: 100px;
+    height: 100px;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  iframe {
+    width: 200px;
+    height: 200px;
+  }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  iframe {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  iframe {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  iframe {
+    width: 500px;
+    height: 500px;
+  }
+}
