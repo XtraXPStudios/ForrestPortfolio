@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Homepage</title>
+    <link rel="shortcut icon" type="image/png" href="WebsiteImages/Homepage/Favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://db.onlinewebfonts.com/c/3e9b8901f214bcb84ef81951d4052efe?family=Biome+W01+Wide+Bold"
+        rel="stylesheet" type="text/css" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <?php
+
+    // define variables and set to empty values
+    $first = $last = $email = $message = $sentMessage = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        //set our variables to equal what the user entered
+        $first = test_input($_POST["fname"]);
+        $last = test_input($_POST["lname"]);
+        $email = test_input($_POST["email"]);
+        $message = test_input($_POST["subject"]);
+
+        // the message
+    
+        $msg = "You have an web inquiry from $first $last\nThe email is $email\nTheir message is $message";
+
+        // use wordwrap() if lines are longer than 70 characters
+    
+        $msg = wordwrap($msg, 70);
+
+        // send email
+    
+        if (mail("xtraxpmedia@gmail.com", "You have a message from your portfolio!", $msg)) {
+
+            $sentMessage = "<h3 class='text-success'>Thanks for the message! I'll respond shortly.</h3>";
+
+        } else {
+
+            $sentMessage = "<h3 class='text-danger'>Message failed to be sent.</h3>";
+
+        }
+    }
+
+    function test_input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+
+    ?>
+
+    <!-- Navbar -->
+    <nav class="navbar sticky-top transparentNav" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="WebsiteImages/LinkPhotos/NavShark.png" /></a>
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav text-white">
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="work.html">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="future.html">Future</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- End Navbar -->
+
+
+    <section id="Intro">
+        <div class="container py-5">
+            <div>
+                <?php
+                echo $sentMessage;
+                ?>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container" id="Socials">
+            <div class="row d-flex align-items-center">
+                <div class="col-sm-6 text-center py-5">
+                    <h1 class="text-white">Thank You!</h1>
+                    <ul class="py-3 my-3">
+                        <li>
+                            <a href="https://www.linkedin.com/in/forrestratchford" target="_blank"><i
+                                    class="bi bi-linkedin h1"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/xtraxpmedia/" target="_blank"><i
+                                    class="bi bi-instagram h1"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@fmxtra-" target="_blank"><i
+                                    class="bi bi-youtube h1"></i></a>
+                        </li>
+                    </ul>
+                    <p>Copyright <i id="copyright" class="bi bi-c-circle h3"></i></p>
+                </div>
+                <div class="col-sm-6 py-4">
+                    <form id="contactform" class="text-white needs-validation" novalidate method="post"
+                        action="email.php">
+                        <div class="my-3">
+                            <label class="form-label" for="fname">First Name</label>
+                            <input class="form-control" type="text" id="fname" name="fname" placeholder="Your name.."
+                                required />
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">
+                                Please enter your first name.
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <label class="form-label" for="lname">Last Name</label>
+                            <input class="form-control" type="text" id="lname" name="lname"
+                                placeholder="Your last name.." required />
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please enter your last name.</div>
+                        </div>
+
+                        <div class="my-3">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Your email.."
+                                required />
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please enter a valid email.</div>
+                        </div>
+
+                        <div class="my-3">
+                            <label class="form-label" for="subject">Subject</label>
+                            <textarea class="form-control" id="subject" name="subject" placeholder="Write something.."
+                                rows="3" required></textarea>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill in a request.</div>
+                        </div>
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

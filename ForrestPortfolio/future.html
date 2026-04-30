@@ -39,7 +39,7 @@
     <nav class="navbar sticky-top transparentNav" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html"
-          ><img src="WebsiteImages/NavShark.png"
+          ><img src="WebsiteImages/LinkPhotos/NavShark.png"
         /></a>
         <button
           class="navbar-toggler bg-white"
@@ -147,51 +147,42 @@
             <p>Copyright <i id="copyright" class="bi bi-c-circle h3"></i></p>
           </div>
           <div class="col-sm-6 py-4">
-            <form action="action_page.php " class="text-white">
-              <div class="my-3">
-                <label class="form-label" for="fname">First Name</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  id="fname"
-                  name="firstname"
-                  placeholder="Your name.."
-                />
-              </div>
-              <div class="my-3">
-                <label class="form-label" for="lname">Last Name</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  id="lname"
-                  name="lastname"
-                  placeholder="Your last name.."
-                />
-              </div>
+            <form id="contactform" class="text-white needs-validation" novalidate method="post"
+                        action="email.php">
+                        <div class="my-3">
+                            <label class="form-label" for="fname">First Name</label>
+                            <input class="form-control" type="text" id="fname" name="fname" placeholder="Your name.."
+                                required />
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">
+                                Please enter your first name.
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <label class="form-label" for="lname">Last Name</label>
+                            <input class="form-control" type="text" id="lname" name="lname"
+                                placeholder="Your last name.." required />
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please enter your last name.</div>
+                        </div>
 
-              <div class="my-3">
-                <label class="form-label" for="email">Email</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  id="email"
-                  name="lastname"
-                  placeholder="Your email.."
-                />
-              </div>
+                        <div class="my-3">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Your email.."
+                                required />
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please enter a valid email.</div>
+                        </div>
 
-              <div class="my-3">
-                <label class="form-label" for="subject">Subject</label>
-                <textarea
-                  class="form-control"
-                  id="subject"
-                  name="subject"
-                  placeholder="Write something.."
-                  rows="3"
-                ></textarea>
-              </div>
-              <input type="submit" value="Submit" />
-            </form>
+                        <div class="my-3">
+                            <label class="form-label" for="subject">Subject</label>
+                            <textarea class="form-control" id="subject" name="subject" placeholder="Write something.."
+                                rows="3" required></textarea>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill in a request.</div>
+                        </div>
+                        <input type="submit" value="Submit" />
+                    </form>
           </div>
         </div>
       </div>
